@@ -3,12 +3,496 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>株式会社invizData</title>
-  <meta name="description" content="株式会社invizData（インビズデータ）はデータ活用・BI導入支援・データ基盤整備・SESを提供します。" />
+
+  <!-- ===== SEO (EDIT HERE) ===== -->
+  <title>株式会社invizData｜データ活用・BI導入支援・データ基盤・SES</title>
+  <meta name="description" content="株式会社invizDataは、データ活用・BI導入支援・データ基盤構築・SESを提供するデータ専門企業です。Tableauを中心に、実務に強い支援で意思決定を加速します。" />
+  <link rel="canonical" href="https://invizdata.com/" />
+
+  <!-- ===== OGP (EDIT HERE) ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="株式会社invizData" />
+  <meta property="og:title" content="株式会社invizData｜データ活用・BI導入支援・データ基盤・SES" />
+  <meta property="og:description" content="データを、使える力に。Tableauを中心に、BI導入からデータ基盤、SESまで実務に強い支援を提供します。" />
+  <meta property="og:url" content="https://invizdata.com/" />
+  <!-- OGP画像は後で差し替え（1200x630推奨） -->
+  <meta property="og:image" content="https://invizdata.com/ogp.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ===== Favicon (optional) ===== -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- ===== Basic security / UX ===== -->
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- ===== Styles ===== -->
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --card:#0f1627;
+      --text:#e8eefc;
+      --muted:#b6c2e2;
+      --line:rgba(255,255,255,.10);
+      --accent:#6aa8ff;
+      --accent2:#7cf7d4;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", Arial, sans-serif;
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(106,168,255,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 20%, rgba(124,247,212,.12), transparent 65%),
+        radial-gradient(1200px 800px at 50% 90%, rgba(106,168,255,.08), transparent 70%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,26,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(106,168,255,1), rgba(124,247,212,1));
+      box-shadow: 0 10px 24px rgba(106,168,255,.18);
+      flex: 0 0 auto;
+    }
+    .brand span{font-size:15px}
+    .menu{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .menu a{
+      text-decoration:none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .menu a:hover{border-color: var(--line); color: var(--text); background: rgba(255,255,255,.04);}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(106,168,255,.35);
+      background: rgba(106,168,255,.14);
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      gap:8px;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(106,168,255,.22)}
+    .btn.secondary{
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+    }
+
+    /* Hero */
+    .hero{padding: 64px 0 20px;}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items:stretch;
+    }
+    .hero-card{
+      border:1px solid var(--line);
+      background: rgba(15,22,39,.72);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      overflow:hidden;
+      position:relative;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding:6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .badge i{
+      width:10px; height:10px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display:inline-block;
+    }
+    h1{
+      margin: 14px 0 8px;
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height: 1.2;
+      letter-spacing: .2px;
+    }
+    .lead{color: var(--muted); font-size: 15px; margin: 10px 0 0;}
+    .cta{
+      display:flex; gap: 12px; flex-wrap:wrap;
+      margin-top: 18px;
+    }
+    .mini{
+      margin-top: 14px;
+      display:flex; gap: 10px; flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .mini span{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    /* Side card */
+    .side{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .side .hero-card{padding: 18px;}
+    .side h2{
+      font-size: 15px;
+      margin: 0 0 6px;
+      letter-spacing:.2px;
+    }
+    .list{
+      margin:0; padding-left: 18px; color: var(--muted);
+      font-size: 13px;
+    }
+    .list li{margin: 6px 0}
+
+    /* Sections */
+    section{padding: 34px 0;}
+    .section-title{
+      font-size: 20px;
+      margin: 0 0 10px;
+      letter-spacing:.2px;
+    }
+    .section-lead{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(15,22,39,.62);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .card h3{margin: 0 0 6px; font-size: 15px;}
+    .card p{margin:0; color: var(--muted); font-size: 13px;}
+    .pill{
+      display:inline-flex;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .kpi .card{padding: 14px;}
+    .kpi b{display:block; font-size: 16px;}
+    .kpi small{color: var(--muted);}
+
+    /* Contact */
+    .contact{
+      border:1px solid rgba(106,168,255,.28);
+      background: linear-gradient(135deg, rgba(106,168,255,.14), rgba(124,247,212,.10));
+      border-radius: var(--radius);
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+    }
+    .contact p{margin:0; color: var(--muted); font-size: 13px;}
+    .footer{
+      padding: 24px 0 40px;
+      color: rgba(232,238,252,.70);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+      margin-top: 26px;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns: 1fr; }
+      .grid3{grid-template-columns: 1fr;}
+      .two{grid-template-columns: 1fr;}
+      .kpi{grid-template-columns: 1fr;}
+      .menu{display:none;}
+    }
+  </style>
+
+  <!-- ===== Structured Data (EDIT HERE if needed) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"株式会社invizData",
+    "url":"https://invizdata.com/",
+    "email":"info@invizdata.com",
+    "address":{
+      "@type":"PostalAddress",
+      "addressRegion":"大阪府",
+      "addressLocality":"大阪市淀川区",
+      "streetAddress":"西宮原1-8-24",
+      "addressCountry":"JP"
+    },
+    "sameAs":[]
+  }
+  </script>
 </head>
-<body style="font-family: system-ui, -apple-system, Segoe UI, sans-serif; line-height: 1.6; padding: 40px;">
-  <h1>株式会社invizData</h1>
-  <p>データ活用・BI導入支援 / データ基盤整備 / SES</p>
-  <p><a href="mailto:info@invizdata.com">お問い合わせ</a></p>
+
+<body>
+  <!-- ===== Top Nav ===== -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="invizData">
+        <span class="logo" aria-hidden="true"></span>
+        <span>株式会社invizData</span>
+      </a>
+      <nav class="menu" aria-label="ページ内メニュー">
+        <a href="#services">事業内容</a>
+        <a href="#strengths">強み</a>
+        <a href="#about">会社概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+      <!-- EDIT HERE: contact email -->
+      <a class="btn" href="mailto:info@invizdata.com?subject=%E3%80%90%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%E3%80%91invizData%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87">
+        お問い合わせ
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <span class="badge"><i></i> データ活用・BI導入支援 / データ基盤 / SES</span>
+
+          <!-- EDIT HERE: H1 + sub copy -->
+          <h1>データを、使える力に。</h1>
+          <p class="lead">
+            株式会社invizDataは、データ活用・BI導入支援・データ基盤整備を通じて、
+            企業の意思決定を支えるデータパートナーです。<br />
+            ツール導入で終わらせず、「現場で使われる」運用まで伴走します。
+          </p>
+
+          <div class="cta">
+            <a class="btn" href="#contact">相談してみる</a>
+            <a class="btn secondary" href="#services">提供サービスを見る</a>
+          </div>
+
+          <div class="mini">
+            <span>Tableau中心</span>
+            <span>小回り×スピード</span>
+            <span>実務に強い支援</span>
+          </div>
+        </div>
+
+        <div class="side">
+          <div class="hero-card">
+            <h2>よくある課題</h2>
+            <ul class="list">
+              <li>データはあるが、意思決定に使われていない</li>
+              <li>BIを導入したが、現場に定着しない</li>
+              <li>データ人材が不足している</li>
+            </ul>
+          </div>
+
+          <div class="hero-card">
+            <h2>invizDataの考え方</h2>
+            <p class="lead" style="margin:0; font-size:13px;">
+              「可視化」だけでなく、業務に合わせた設計・運用・改善まで一気通貫で支援します。
+              必要に応じて、データ人材のSES参画も可能です。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section id="services">
+      <h2 class="section-title">事業内容</h2>
+      <p class="section-lead">
+        課題の整理から設計・実装・運用まで、状況に合わせて最適な支援形態をご提案します。
+      </p>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="pill">01｜データ活用・BI導入支援</div>
+          <h3>Tableauを中心に “使われるBI” を実現</h3>
+          <p>
+            要件整理、設計、ダッシュボード構築、ユーザー教育まで支援します。
+            現場の意思決定につながるKPI設計・運用定着を重視します。
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill">02｜データ基盤・データエンジニアリング</div>
+          <h3>分析の土台を整え、品質と再現性を高める</h3>
+          <p>
+            データベース設計、データ統合、ETL/ELT、権限設計など、
+            分析・可視化が回り続ける基盤整備を支援します。
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill">03｜SES（データ人材支援）</div>
+          <h3>プロジェクトに即戦力として参画</h3>
+          <p>
+            データエンジニア／BIエンジニアを中心に、体制・スキル要件に合わせて参画します。
+            立ち上げ〜改善サイクルまで柔軟に対応します。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Strengths ===== -->
+    <section id="strengths">
+      <h2 class="section-title">強み</h2>
+      <p class="section-lead">
+        “実装できる”だけでなく、“運用で成果が出る”ところまで設計します。
+      </p>
+
+      <div class="two">
+        <div class="card">
+          <h3>現場目線の設計とスピード</h3>
+          <p>
+            小回りの利く体制で、意思決定・実装・改善をスピーディーに回します。
+            仕様が固まりきっていない段階でも、叩き台を作りながら前に進めます。
+          </p>
+
+          <div class="kpi">
+            <div class="card">
+              <b>伴走型</b>
+              <small>要件整理〜運用まで</small>
+            </div>
+            <div class="card">
+              <b>一気通貫</b>
+              <small>基盤〜BIまで</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>ツール導入で終わらせない</h3>
+          <p>
+            BIは「作って終わり」になりがちです。invizDataは、
+            KPI定義・データ品質・利用定着（教育/運用）まで含めて設計し、
+            “使われ続けるデータ活用”を目指します。
+          </p>
+          <ul class="list" style="margin-top:10px;">
+            <li>運用ルール／権限設計</li>
+            <li>ダッシュボードの利用定着（教育・ガイド）</li>
+            <li>改善サイクル（利用状況に基づく最適化）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about">
+      <h2 class="section-title">会社概要</h2>
+      <p class="section-lead">基本情報です。必要に応じて追記して育てていけます。</p>
+
+      <div class="card">
+        <div style="display:grid; grid-template-columns: 160px 1fr; gap: 10px; align-items:start;">
+          <div style="color:var(--muted)">会社名</div>
+          <div>株式会社invizData</div>
+
+          <div style="color:var(--muted)">所在地</div>
+          <div>大阪府大阪市淀川区西宮原1-8-24</div>
+
+          <div style="color:var(--muted)">事業内容</div>
+          <div>
+            データ活用支援／BI導入支援／データ基盤構築／SES事業
+          </div>
+
+          <!-- EDIT HERE: Add if you want -->
+          <!--
+          <div style="color:var(--muted)">代表者</div>
+          <div>佐々木 啓太</div>
+
+          <div style="color:var(--muted)">設立</div>
+          <div>2026年1月</div>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact">
+      <h2 class="section-title">お問い合わせ</h2>
+      <p class="section-lead">
+        データ活用・BI導入・データ基盤・人材支援に関するご相談は、お気軽にご連絡ください。
+      </p>
+
+      <div class="contact">
+        <div>
+          <div style="font-weight:700; letter-spacing:.2px;">まずは相談ベースでOKです</div>
+          <p>課題の整理だけでも大丈夫です。状況に合わせて進め方をご提案します。</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="mailto:info@invizdata.com?subject=%E3%80%90%E7%9B%B8%E8%AB%87%E3%80%91invizData%E3%81%B8%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&body=%E3%81%94%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E6%99%82%E6%9C%9F%EF%BC%9A%0A%E3%81%94%E8%81%AF%E7%B5%A1%E5%85%88%EF%BC%9A">
+            メールで問い合わせ
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn secondary" href="#top">ページ上部へ</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap" style="padding:0;">
+        <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+          <div>© <span id="y"></span> invizData</div>
+          <div style="color:rgba(232,238,252,.55)">Data enablement / BI / Engineering / SES</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // footer year
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
